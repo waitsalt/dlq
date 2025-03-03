@@ -102,15 +102,15 @@ cargo run
             - Authorization: Bearer <access_token>
         - desc: 更新一个用户发布的帖子
     - response:
-        - status code: 200
+        - status code: 200  
           body:
             - message: success  
             - data: Post
-        - status code: 401
+        - status code: 401  
           body:  
             - message: unauthorized
             - data: null
-        - status code: 404
+        - status code: 404  
           body:  
             - message: not found
             - data: null
@@ -201,11 +201,11 @@ cargo run
             - Authorization: Bearer <access_token>
         - desc: 更新用户的个人信息
     - response:
-        - status code: 200
+        - status code: 200  
           body:
             - message: success  
             - data: UserPublic
-        - status code: 401
+        - status code: 401  
           body:  
             - message: unauthorized
             - data: null
@@ -225,15 +225,15 @@ cargo run
             - Authorization: Bearer <access_token>
         - desc: 更新用户的帖子
     - response:
-        - status code: 200
+        - status code: 200  
           body:
             - message: success  
             - data: UserPublicListResponse
-        - status code: 401
+        - status code: 401  
           body:  
             - message: unauthorized
             - data: null
         - status code: 404  
           body:  
             - message: not find user
-            - data: null
+            - data: null:q
