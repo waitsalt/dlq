@@ -105,7 +105,7 @@ cargo run
         - status code: 200
           body:
             - message: success  
-            - data: null 
+            - data: Post
         - status code: 401
           body:  
             - message: unauthorized
@@ -137,8 +137,7 @@ cargo run
         - method: post
         - parameter: null
         - body: UserCreatePayload
-        - header: 
-            - Authorization: Bearer <access_token>
+        - header: null
         - desc: 创建一个新的用户
     - response:
         - status code: 200  
@@ -155,8 +154,7 @@ cargo run
         - method: get
         - parameter: null
         - body: null
-        - header:
-            - Authorization: Bearer <access_token> | null
+        - header: null
         - desc: 获取用户信息
     - response:
         - status code: 200  
