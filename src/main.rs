@@ -1,11 +1,17 @@
 mod app;
+mod model;
 mod route;
 mod util;
 
+use util::config::CONFIG;
+
 #[tokio::main]
 async fn main() {
-    let router = route::init().await;
-    let address = "127.0.0.1:9999";
-    let listener = tokio::net::TcpListener::bind(&address).await.unwrap();
-    axum::serve(listener, router).await.unwrap();
+    let app = app::init();
+    let address = format!("127.0.0.1:{}", CONFIG.server.port);
+    let listener = tokio::net::TcpListener::bind(&address)
+        .await
+        .expect("address bind fail");
+    tracing::info!("server run in http://{}", address);
+    axum::serve(listener, app).await.unwrap();
 }

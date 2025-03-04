@@ -1,1 +1,8 @@
-pub async fn init() {}
+use axum::Router;
+
+use crate::{route, util::logger};
+
+pub fn init() -> Router {
+    logger::init();
+    route::init()
+}

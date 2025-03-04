@@ -1,9 +1,6 @@
-use axum::{Router, routing::post};
+use axum::Router;
 
-pub async fn init() -> Router {
-    Router::new().route("/", post(hello))
-}
-
-pub async fn hello() {
-    println!("asda");
+pub fn init() -> Router {
+    Router::new()
+    // .route("/", get(hello))
 }

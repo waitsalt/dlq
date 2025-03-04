@@ -149,6 +149,40 @@ cargo run
             - message: unauthorized
             - data: null
 
+- /v0/users/login
+    - request:
+        - method: post
+        - parameter: null
+        - body: UserLoginPayload
+        - header: null
+        - desc: 登陆
+    - response:
+        - status code: 200  
+          body:  
+            - message: success  
+            - data:  String
+        - status code: 401  
+          body:  
+            - message: unauthorized
+            - data: null
+
+- /v0/users/logout
+    - request:
+        - method: get
+        - parameter: null
+        - body: UserLoginPayload
+        - header: Bearer <access_token>
+        - desc: 登出
+    - response:
+        - status code: 200  
+          body:  
+            - message: success  
+            - data: null
+        - status code: 401  
+          body:  
+            - message: unauthorized
+            - data: null
+
 - /v0/users/{user_id: String}
     - request:
         - method: get
@@ -236,4 +270,4 @@ cargo run
         - status code: 404  
           body:  
             - message: not find user
-            - data: null:q
+            - data: null
