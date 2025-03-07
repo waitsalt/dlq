@@ -19,8 +19,12 @@ pub struct Logger {
 pub struct Config {
     pub server: Server,
     pub logger: Logger,
+    pub database: Database,
 }
-
+#[derive(Debug, Deserialize)]
+pub struct Database {
+    pub url: String,
+}
 impl Config {
     pub fn init() -> Result<Self, config::ConfigError> {
         let mut builder = config::Config::builder()

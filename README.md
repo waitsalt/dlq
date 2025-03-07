@@ -30,7 +30,7 @@ cargo run
         - status code: 200  
           body:  
             - message: success  
-            - data: PostListResponse
+            - data: PostResponseList
         - status code: 401  
           body:  
             - message: unauthorized
