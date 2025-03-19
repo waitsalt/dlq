@@ -1,6 +1,5 @@
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
-
 use axum::response::IntoResponse;
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct AppResponse<T> {
@@ -10,10 +9,10 @@ pub struct AppResponse<T> {
 }
 
 impl<T: DeserializeOwned + Serialize> AppResponse<T> {
-    pub fn from(message: String, data: Option<T>) -> Self {
+    pub fn from(message: &str, data: Option<T>) -> Self {
         Self {
             code: 200,
-            message: message,
+            message: message.to_string(),
             data: data,
         }
     }

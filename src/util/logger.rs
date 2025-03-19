@@ -4,12 +4,11 @@ use tracing_subscriber::{fmt, layer::SubscriberExt, util::SubscriberInitExt};
 
 use crate::util::config::CONFIG;
 
-pub fn init() {
+pub async fn init() {
     if env::var_os("RUST_LOG").is_none() {
         let app_name = env::var("CARGO_PKG_NAME").expect("Fail setting init");
         let level = CONFIG.logger.level.as_str();
         let env = format!("{app_name}={level},tower_http={level}");
-
         unsafe {
             env::set_var("RUST_LOG", env);
         }

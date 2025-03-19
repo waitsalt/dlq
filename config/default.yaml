@@ -1,5 +1,16 @@
-server:
-  port: 9999
+server: 
+  port: 8000
+
+database:
+  url: "postgresql://root:123456@localhost:5432/database"
+
+redis:
+    url: "redis://127.0.0.1/"
 
 logger:
   level: "debug"
+
+auth:
+  secret: "123456"
+  access_token_duration: 15
+  refresh_token_duration: 30

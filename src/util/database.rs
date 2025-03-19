@@ -17,6 +17,6 @@ pub async fn init() {
     assert!(POOL.set(pool).is_ok(), "database init false");
 }
 
-pub async fn get_pool() -> &'static Pool<Postgres> {
+pub fn database_connect() -> &'static Pool<Postgres> {
     POOL.get().expect("datebase pool get error")
 }
